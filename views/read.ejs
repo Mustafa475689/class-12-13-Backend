@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/read.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a class="nav-text" href="/">Back to home</a>
+        </div>
+        <h1>All Users</h1>
+        <div class="users">
+            <% if(users.length > 0){ %>
+                <% users.forEach(function(user){ %>
+                    <div class="user">
+                        <div class="img">
+                            <img src="<%= user.image  %>" alt="">
+                        </div>
+                        <h3><%= user.name %></h3>
+                        <h5><%= user.email %></h5>
+                        <div class="functions">
+                           <a class="edit" href="/edit/<%= user._id %>">Edit user</a>
+                           <a class="del" href="/delete/<%= user._id %>">Delete user</a>                    
+                        </div>
+                    </div>
+                    <% }) %>
+           <% } else { %>
+                <h2>! No users yet</h2>        
+          <% } %>
+
+          
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-div">
+            <h1>Update User</h1>
+            <form action="/update/<%= user._id %>" method="post">
+                <input class="insert-info" type="text" name="name" placeholder="Enter Name" value="<%= user.name %>"> <br>
+                <input class="insert-info" type="text" name="email" placeholder="Enter Email" value="<%= user.email %>"> <br>
+                <input class="insert-info" type="text" name="image" placeholder="Image-url" value="<%= user.image %>"> <hr>
+                <input class="submit" type="submit" value="Update User">
+                <a href="/read">Go to read users</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
